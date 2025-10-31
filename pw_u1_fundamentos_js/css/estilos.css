@@ -1,3 +1,4 @@
+/**/
 h1 {
     color: rgb(165, 82, 82);
     background: rgb(27, 140, 216);
@@ -21,4 +22,7 @@ p {
     background: rgb(223, 236, 33);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+}
+body {
+    background: black;
 }
