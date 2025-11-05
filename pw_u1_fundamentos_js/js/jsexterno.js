@@ -18,34 +18,37 @@ function mostrarElemento(id_elemento) {
     document.getElementById(id_elemento).style.display = 'block';
 }
 
-function evaluarOperacion(tipo){
+function evaluarOperacion(tipo) {
     let num1 = parseFloat(document.getElementById('id_n1').value);
     let num2 = parseFloat(document.getElementById('id_n2').value);
     let resultado = 0;
-    if(tipo==='+'){
+    if (tipo === '+') {
         resultado = sumar(num1, num2);
     }
-    if(tipo==='-'){
-        
+    if (tipo === '-') {
+        resultado = restar(num1, num2);
+
     }
-    if(tipo==='*'){
-        
+    if (tipo === '*') {
+        resultado = multiplicar(num1, num2);
+
     }
-    if(tipo==='/'){
-        
+    if (tipo === '/') {
+        resultado = dividir(num1, num2);
+
     }
-    document.getElementById('id_resultado').innerText = resultado;  
-    
+    document.getElementById('id_resultado').innerText = resultado;
+
 }
-function sumar(num1, num2){
+function sumar(num1, num2) {
     return num1 + num2;
 }
-function restar(num1, num2){
+function restar(num1, num2) {
     return num1 - num2;
 }
-function multiplicar(num1, num2){
+function multiplicar(num1, num2) {
     return num1 * num2;
 }
-function dividir(num1, num2){
+function dividir(num1, num2) {
     return num1 / num2;
 }
