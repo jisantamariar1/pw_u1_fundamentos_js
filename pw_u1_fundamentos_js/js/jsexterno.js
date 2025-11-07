@@ -58,7 +58,7 @@ function dividir(num1, num2) {
 function fundamentosJS() {
     /***  3 Tipos de variables ***/
     /*Es la mas antigua, y ya es considerada obsoleta */
-    var nombre = "Joan";
+    var nombre1 = "Joan";
     /*En lugar de la variable var se utiliza la variable let */
     /*variables cambiantes */
     let apellido = "Santamaria"
@@ -74,7 +74,7 @@ function fundamentosJS() {
     const IVA = 12.8;
     /*console.log sirve para imprimir en la consola del navegador */
     console.log('Fundamentos de JavaScript');
-    console.log('Nombre: ' + nombre);
+    console.log('Nombre: ' + nombre1);
     console.log('IVA: ' + IVA);
     console.log(arreglo);
     console.log(diasSemana);
@@ -144,28 +144,134 @@ function fundamentosJS() {
         genero: 'M',
         ciudad: 'Quito'
     }
-    console.log(profesor); 
+    console.log(profesor);
     /*Acceder a los atributos del objeto */
     console.log(profesor.nombre);
     profesor.apellido = 'Teran';
     console.log(profesor);
     //comparadores
     /*Comparacion se recomienda con === */
-    if(profesor.ciudad === 'Quito'){
+    if (profesor.ciudad === 'Quito') {
         console.log('Es Quiteño');
     }
 
-    if(profesor.edad !== 36){
+    if (profesor.edad !== 36) {
         console.log('Es diferente de 36');
-    }else{
-        console. log ('Es 36');
+    } else {
+        console.log('Es 36');
     }
     /*In para objetos */
-    for(let clave in profesor){
+    for (let clave in profesor) {
         // datos de la clave
         console.log(clave);
         //datos del objeto
         console.log(profesor[clave]);
     }
+    //arreglo de objetos
+    const e1 = {
+        nombre: 'Edison',
+        apellido: 'Cayambe',
+        edad: 35,
+        ecuatoriano: true,
+        genero: 'M',
+        ciudad: 'Quito'
+    }
+    const e2 = {
+        nombre: 'Edison',
+        apellido: 'Cayambe',
+        edad: 35,
+        ecuatoriano: true,
+        genero: 'M',
+        ciudad: 'Quito'
+    }
+    const arregloEstdiantes = [e1, e2, {
+        nombre: 'Edison 3',
+        apellido: 'Cayambe',
+        edad: 35,
+        ecuatoriano: true,
+        genero: 'M',
+        ciudad: 'Quito'
+    }];
+    console.log(arregloEstdiantes[0]);
+    console.log(arregloEstdiantes[2]);
+
+    /*Desestructuración */
+    //Desestructuración de arreglos
+    const ar1 = [1, 2, 3, 4, 5, 6, 7];
+    const [p1, p2, p3, p4, p5] = ar1;
+    console.log(p1);
+    console.log(p5);
+
+    const [primero, , , , , , ultimo] = ar1;
+    console.log(primero);
+    console.log(ultimo);
+
+    //lo puedo hacer en un solo paso
+    const [pos1, pos2] = [1, 2, 3, 4, 5, 6, 7];
+    imprime(ar1);
+
+    //Objetos
+    //aqui no por la posicion sino por el nombre del atributo
+    const e3 = {
+        nombre: 'Edison',
+        apellido: 'Cayambe',
+        edad: 35,
+        ecuatoriano: true,
+        genero: 'M',
+        ciudad: 'Quito'
+    };
+    const { nombre, ciudad } = e3;
+    console.log(nombre);
+    console.log(ciudad);
+
+    //de una sola
+    const { nombre: n, ciudad: ciu } = {
+        nombre: 'Edison',
+        apellido: 'Cayambe',
+        edad: 35,
+        ecuatoriano: true,
+        genero: 'M',
+        ciudad: 'Quito'
+
+    };
+
+    console.log(n);
+    console.log(ciu);
+
+    const e4 = {
+        nombre: 'Edison',
+        apellido: 'Cayambe',
+        edad: 35,
+        ecuatoriano: true,
+        genero: 'M',
+        ciudad: 'Quito',
+        direccion:{
+            calle:"Av.America",
+            barrio:":La gasca",
+            numeracion:"2343"
+        }
+    }
+    console.log(e4.direccion);
+    console.log(e4.direccion);
+
+    const {edad:ed, direccion} = e4;
+    console.log(ed);
+
+    console.log(direccion);
+    const {calle} = direccion;
+    console.log(calle);
+
+    const{direccion:{barrio,calle:c1,numeracion}} = e4;
+    console.log(barrio);
+    console.log(c1);
+    console.log(numeracion);
+
+    console.log(ed);
 
 }
+    //desctruroración directamente en la firma del metodo
+    function imprime([a, b, c]) {
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    }
