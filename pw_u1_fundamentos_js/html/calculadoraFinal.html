@@ -19,30 +19,30 @@
         <div id="calculadora">
             <!-- <label id="display" for="">0+1=1</label> -->
             <!-- lo mas comun es ponerlo en un div -->
-            <div id="display"> 1+2=3</div>
+            <div id="display">1+2=3</div>
             <button onclick="eliminarElemento()">C</button>
             <button onclick="removerUltimo()">&larr;</button>
-            <button>%</button>
-            <button>/</button>
+            <button onclick="mostrarDisplay('%')">%</button>
+            <button onclick="mostrarDisplay('/')">/</button>
             <button onclick="mostrarDisplay(7)">7</button>
             <button onclick="mostrarDisplay(8)">8</button>
             <button onclick="mostrarDisplay(9)">9</button>
-            <button>*</button>
+            <button onclick="mostrarDisplay('*')">*</button>
             <button onclick="mostrarDisplay(4)">4</button>
             <button onclick="mostrarDisplay(5)">5</button>
             <button onclick="mostrarDisplay(6)">6</button>
-            <button>-</button>
+            <button onclick="mostrarDisplay('-')">-</button>
             <button onclick="mostrarDisplay(1)">1</button>
             <button onclick="mostrarDisplay(2)">2</button>
             <button onclick="mostrarDisplay(3)">3</button>
-            <button >+</button>
+            <button onclick="mostrarDisplay('+')">+</button>
             <button onclick="mostrarDisplay(0)">0</button>
-            <button>.</button>
-            <button class="column-2">=</button>
+            <button onclick="mostrarDisplay('.')">.</button>
+            <button onclick="calcularResultado()" class="column-2">=</button>
 
         </div>
     </section>
-    <footer> Pie </footer>
+    <footer></footer>
     </div>
 </body>
 
