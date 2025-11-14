@@ -16,6 +16,18 @@ function validarCampos(){
         mostrarAsterisco('id_error_nombre');
         return;
     };
+    if(apellido==="" ){
+
+        mostrar_mensaje('Apellido necesario');
+        mostrarAsterisco('id_error_apellido');
+        return;
+    };
+    if(fecha==="" ){
+
+        mostrar_mensaje('Fecha de nacimiento necesario');
+        mostrarAsterisco('id_error_fecha');
+        return;
+    };
     if(email===""){
         mostrar_mensaje('Email necesario');
         mostrarAsterisco('id_error_email');
@@ -24,6 +36,12 @@ function validarCampos(){
     }else if(!validarEmail(email)){
         mostrar_mensaje('Email invalido');
         mostrarAsterisco('id_error_email');
+        return;
+    };
+    if(password==="" ){
+
+        mostrar_mensaje('Contraseña necesaria');
+        mostrarAsterisco('id_error_password');
         return;
     };
     
