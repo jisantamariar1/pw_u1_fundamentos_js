@@ -21,6 +21,8 @@ function validarCampos(){
         mostrar_mensaje('Apellido necesario');
         mostrarAsterisco('id_error_apellido');
         return;
+    }else{
+        limpiarMensajes();
     };
     if(fecha==="" ){
 
